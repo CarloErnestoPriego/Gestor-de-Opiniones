@@ -1,3 +1,5 @@
+'Hecho por Carlos Priego'
+
 import fs from 'fs/promises';
 import { join } from 'path';
 

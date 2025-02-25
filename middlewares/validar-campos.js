@@ -1,3 +1,5 @@
+'Hecho por Carlos Priego'
+
 import { validationResult } from "express-validator";
 
 export const validarCampos = (req, res, next) => {

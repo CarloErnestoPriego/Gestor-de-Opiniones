@@ -1,3 +1,5 @@
+'Hecho por Carlos Priego'
+
 import rateLimit from 'express-rate-limit';
 
 const limiter = rateLimit({

@@ -1,3 +1,5 @@
+'Hecho por Carlos Priego'
+
 import jwt from "jsonwebtoken";
 
 import Usuario from '../users/user.model.js';
