@@ -1,13 +1,14 @@
 'Hecho por cpriego'
+
 import { Schema, model} from 'mongoose';
 
-const userSchema = Schema = ({
+const userSchema = Schema({
     name: {
         type: String,
         required: [true, 'el nombre es requerido'],
         maxLenght: [25, 'el nombre no puede ser mayor a 25 caracteres']
     },
-    lastname: {
+    surname: {
         type: String,
         required: [true, 'el nombre es requerido'],
         maxLenght: [25, 'el apellido es requerido']
@@ -37,7 +38,6 @@ const userSchema = Schema = ({
     },
     role: {
         type: String,
-        required: true,
         enum: ['ADMIN', 'USER']
     },
     estado: {
@@ -51,7 +51,7 @@ const userSchema = Schema = ({
     }
 );
 
-UserSchema.methods.toJSON = function () {
+userSchema.methods.toJSON = function () {
 
     const {__v, password, _id, ...usuario} = this.toObject();
 

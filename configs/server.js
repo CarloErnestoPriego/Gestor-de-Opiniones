@@ -5,7 +5,12 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { dbConnection } from "./mongo.js";
-import { connect } from "mongoose";
+import userRoutes from "../src/users/user.routes.js";
+import authRoutes from "../src//auth/auth.routes.js";
+import publicacionRoutes from "../src//publicaciones/publicaciones.routes.js";
+import comentarioRoutes from "../src//comentarios/comentario.routes.js";
+import limiter from "../src/middlewares/validar-cant-peticiones.js";
+
 
 const middlewares = (app) => {
     app.use(cors());
@@ -15,7 +20,10 @@ const middlewares = (app) => {
 }
 
 const routes = (app) => {
-
+    app.use("/gestorOpiniones/v1/auth", authRoutes)
+    app.use("/gestorOpiniones/v1/user", userRoutes)
+    app.use("/gestorOpiniones/v1/posts" , publicacionRoutes)
+    app.use("/gestorOpiniones/v1/comments", comentarioRoutes)
 }
 
 const conectarDB = async () => {

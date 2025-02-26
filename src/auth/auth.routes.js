@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { login,register, updatePassword } from "./auth.controller.js";
+import { login,register } from "./auth.controller.js";
 import { registerValidator,loginValidator, upPassValidator} from "../middlewares/validator.js"
 import { uploadProfilePicture } from "../middlewares/multer-upload.js";
 import { deleteFileonError } from "../middlewares/delete-file-on-error.js";
@@ -25,7 +25,6 @@ router.put(
     '/password/:id',
     validarJWT,
     upPassValidator,
-    updatePassword
 )
 
 export default router

@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "67be8854cb81598c1a0bd1dc"
+  },
+  "titulo": "Gestor de Opiniones",
+  "categoria": "Informatica",
+  "descripcion": "Probando el programa",
+  "estado": true,
+  "fechaCreacion": {
+    "$date": "2025-02-26T03:19:48.443Z"
+  },
+  "__v": 0
+}]

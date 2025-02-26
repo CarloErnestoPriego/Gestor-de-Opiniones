@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "67be849a234a3e8302546161"
+  },
+  "name": "Carlos",
+  "surname": "Priego",
+  "username": "cpriego",
+  "email": "cpriego@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$6zqBe5xwPnOTiPFC+09CfA$j76wC+7FHvdCcsvoGLJRyv4EMwlrzAOSJXgIulvbvxM",
+  "profilePicture": null,
+  "phone": "78561248",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-26T03:03:54.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:03:54.559Z"
+  }
+}]

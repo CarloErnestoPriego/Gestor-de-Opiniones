@@ -1,7 +1,6 @@
 import { hash, verify} from 'argon2';
 import Usuario from '../users/user.model.js';
 import { generarJWT } from '../helpers/generate-jwt.js';
-import { error } from 'console';
 
 export const register = async(req, res) => {
 
