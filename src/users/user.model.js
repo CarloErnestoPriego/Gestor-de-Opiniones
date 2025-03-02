@@ -1,17 +1,15 @@
-'Hecho por cpriego'
+import { Schema, model } from 'mongoose';
 
-import { Schema, model} from 'mongoose';
-
-const userSchema = Schema({
+const userSchema = new Schema({
     name: {
         type: String,
-        required: [true, 'el nombre es requerido'],
-        maxLenght: [25, 'el nombre no puede ser mayor a 25 caracteres']
+        required: [true, 'El nombre es requerido'],
+        maxlength: [25, 'El nombre no puede ser mayor a 25 caracteres']
     },
     surname: {
         type: String,
-        required: [true, 'el nombre es requerido'],
-        maxLenght: [25, 'el apellido es requerido']
+        required: [true, 'El apellido es requerido'],
+        maxlength: [25, 'El apellido no puede ser mayor a 25 caracteres']
     },
     username: {
         type: String,
@@ -19,45 +17,42 @@ const userSchema = Schema({
     },
     email: {
         type: String,
-        requred: [true, 'el correo es requerido'],
+        required: [true, 'El correo es requerido'],
         unique: true
     },
     password: {
         type: String,
-        required: [true, 'la contraseña es requerida'],
-        minLenght: [8, 'La contraseña debe ser de almenos 8 caracteres']
+        required: [true, 'La contraseña es requerida'],
+        minlength: [8, 'La contraseña debe tener al menos 8 caracteres']
     },
-    profilePicture:{
+    profilePicture: {
         type: String
     },
     phone: {
         type: String,
-        minLenght: [8, 'el numero de telefono debe tener 8 digitos'],
-        maxLenght: [8, 'el numero de telefono debe tener 8 digitos'],
-        required: true
+        required: true,
+        minlength: [8, 'El número de teléfono debe tener 8 dígitos'],
+        maxlength: [8, 'El número de teléfono debe tener 8 dígitos']
     },
     role: {
         type: String,
-        enum: ['ADMIN', 'USER']
+        enum: ['ADMIN', 'USER'],
+        default: 'USER'
     },
     estado: {
         type: Boolean,
         default: true
     }
-},
-    {
-        timestamps: true,
-        versionKey: false
-    }
-);
+}, {
+    timestamps: true,
+    versionKey: false
+});
 
+// Modificar el objeto JSON que se envía como respuesta
 userSchema.methods.toJSON = function () {
-
-    const {__v, password, _id, ...usuario} = this.toObject();
-
-    usuario.uid = _id;
-
-    return usuario
+    const { __v, password, _id, ...usuario } = this.toObject();
+    usuario.uid = _id; // Se cambia _id por uid
+    return usuario;
 }
 
-export default model('User', userSchema)
+export default model('User', userSchema);

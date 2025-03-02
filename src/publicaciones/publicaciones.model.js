@@ -14,15 +14,14 @@ const publicacionesSchema = new Schema({
         type: String,
         required: true
     },
-    idUsuario: { // Autor de la publicación
+    idAutor: {
         type: Schema.Types.ObjectId,
         ref: 'User',
     },
     fechaCreacion: {
-        type: Date, 
-        default: Date.now
+        type: Date, default: Date.now
     },
-    estado: {
+    status: {
         type: Boolean,
         default: true
     },

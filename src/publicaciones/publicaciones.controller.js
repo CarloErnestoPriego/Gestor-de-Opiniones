@@ -1,113 +1,125 @@
-'Hecho por Carlos Priego'
-
 import Post from '../publicaciones/publicaciones.model.js';
 import Comment from '../comentarios/comentario.model.js';
 import User from '../users/user.model.js';
 
 export const crearPost = async (req, res) => {
-    const userId = req.idUsuario;
+
+    const userId = req.user._id;
+
     const { titulo, categoria, descripcion } = req.body;
 
     try {
-
-        const posts = new Post({
-            titulo, categoria, descripcion, idUsuario: userId,
+        const post = new Post({
+            titulo,
+            categoria,
+            descripcion,
+            idAutor: userId,
         });
 
-        await posts.save();
+        await post.save();
 
         res.status(201).json({
-            posts
+            post
         });
-
     } catch (error) {
+        res.status(500).json('Error del Servidor');
         console.error(error);
-        res.status(500).json({
-            message: 'Internal Server Error',
-        })
-    }
-}
-
-export const actualizarPost = async (req, res) => {
-
-    const { id } = req.params;
-    const { _id, author_id, ...rest } = req.body;
-
-    try {
-        await Posts.findByIdAndUpdate(id, rest)
-
-        const posts = await Posts.findOne({ _id: id })
-
-        res.status(200).json({
-            posts
-        });
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({
-            message: 'Internal Server Error',
-        })
-    }
-};
-
-export const eliminarPost = async (req, res) => {
-
-    const { id } = req.params;
-    try {
-        await Posts.findByIdAndUpdate(id, { state: false });
-
-        const posts = await Posts.findOne({ _id: id });
-
-        res.status(200).json({
-            msg: 'Se elimino exitosamente el post',
-            posts,
-        });
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).json('Internal Server Error');
     }
 }
 
 export const feed = async (req, res) => {
-
     const { limit, offset } = req.query;
-    const query = { state: true };
+    const query = { status: true };
 
     try {
         const [total, posts] = await Promise.all([
-            Posts.countDocuments(query),
-            Posts.find(query)
+            Post.countDocuments(query),
+            Post.find(query)
                 .skip(Number(offset))
                 .limit(Number(limit))
         ]);
 
         const formattedPosts = posts.map(post => ({
             _id: post._id,
-            title: post.title,
-            creation_date: new Date(post.creation_date).toISOString().split('T')[0],
+            titulo: post.titulo,
+            descripcion: post.descripcion,
+            categoria: post.categoria,
+            fechaCreacion: new Date(post.fechaCreacion).toISOString().split('T')[0],
         }));
 
         res.status(200).json({
             total,
             posts: formattedPosts
         });
-        
     } catch (error) {
         console.error(error);
-        res.status(500).json({ 
-            message: 'Internal Server Error' 
+        res.status(500).json({ error: 'Error del Servidor' });
+    }
+};
+
+export const actualizarPost = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        console.log("Recibido ID:", id);
+        console.log("Datos de actualización:", updateData);
+
+        if (!id) {
+            return res.status(400).json({ success: false, message: "El id es requerido" });
+        }
+
+        const updatedPost = await Post.findByIdAndUpdate(id, updateData, { new: true });
+
+        if (!updatedPost) {
+            return res.status(404).json({ success: false, message: "Publicacion no encontrada" });
+        }
+
+        console.log("Post actualizado correctamente:", updatedPost);
+
+        res.status(200).json({
+            success: true,
+            post: updatedPost
+        });
+
+    } catch (error) {
+        console.error("Error en actualizarPost:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Error del Servidor",
+            error: error.message
         });
     }
 };
 
-export const detallesPost = async (req, res) => {
+
+export const eliminarPost = async (req, res) => {
+    const { id } = req.params;
+    try {
+        await Post.findByIdAndUpdate(id, { status: false });
+
+        const post = await Post.findOne({ _id: id });
+
+        res.status(200).json({
+            msg: 'Publicación eliminada correctamente',
+            post,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json('Error del Servidor');
+    }
+}
+
+export const detalle = async (req, res) => {
     try {
         const postId = req.params.postId;
-        const post = await Posts.findById(postId);
-        const comments = await Comment.find({ postId: postId });
+        const post = await Post.findById(postId);
+        if (!post) {
+            return res.status(404).json({ message: "El post no existe" });
+        }
 
-        const postAuthor = await User.findOne({ _id: post.author_id });
+        const comments = await Comment.find({ postId: postId });
+        const postAuthor = await User.findOne({ _id: post.idAutor });
 
         const commentsDetails = await Promise.all(comments
             .filter(comment => comment.status === true)
@@ -116,17 +128,17 @@ export const detallesPost = async (req, res) => {
                 return {
                     id: comment._id,
                     comment: comment.text,
-                    author: commentAuthor.username,
+                    author: commentAuthor ? commentAuthor.username : "Usuario desconocido",
                 };
             }));
 
         const details = {
             post: {
-                title: post.title,
-                category: post.category,
-                text: post.text,
-                author: postAuthor.username,
-                creation_date: new Date(post.creation_date).toISOString().split('T')[0],
+                titulo: post.titulo,
+                categoria: post.categoria,
+                descripcion: post.descripcion,
+                author: postAuthor ? postAuthor.username : "Autor desconocido",
+                fechaCreacion: new Date(post.fechaCreacion).toISOString().split('T')[0],
             },
             comments: commentsDetails,
         };
@@ -134,8 +146,6 @@ export const detallesPost = async (req, res) => {
         res.status(200).json({ details });
     } catch (error) {
         console.error(error);
-        res.status(500).json({
-            message: 'Internal Server Error' 
-        });
+        res.status(500).json({ message: 'Error del Servidor' });
     }
 };

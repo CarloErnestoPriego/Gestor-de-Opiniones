@@ -3,19 +3,19 @@
 import { Schema, model } from 'mongoose';
 
 const comentarioSchema = new Schema({
-    idPost: {
+    postId: {
         type: Schema.Types.ObjectId,
         ref: 'Post',
     },
-    descripcion: {
+    text: {
         type: String,
         required: true,
     },
-    idUsuario: {    // Autor del comentario
+    author_id: {
         type: Schema.Types.ObjectId,
         ref: 'User',
     },
-    estado: {
+    status: {
         type: Boolean,
         default: true,
     },

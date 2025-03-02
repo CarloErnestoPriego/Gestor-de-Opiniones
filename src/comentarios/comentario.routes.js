@@ -3,17 +3,17 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { validarJWT } from "../middlewares/validar-jwt.js";
-import { validarSolicitud, ValidarComentarioAutor } from "../middlewares/validar-campos.js";
-import { publicacionExistente } from "../helpers/validacion-publicaciones.js";
-import { comentarioExistente } from "../helpers/validacion-comentarios.js";
 import { crearComentario, eliminarComentario, actualizarComentario } from "../comentarios/comentario.controller.js";
+import { comentarioExistente } from "../helpers/validacion-comentarios.js";
+import { publicacionExistente } from "../helpers/validacion-publicaciones.js";
+import { validarSolicitud, ValidarComentarioAutor } from "../middlewares/validar-campos.js";
 
 const router = Router();
 
 router.post('/:idPost',
     validarJWT,
     [
-        check("postId", "El id no es un formato valido para MongoDB").isMongoId(),
+        check("idPost", "The id is not a valid MongoDB format").isMongoId(),
         check("postId").custom(publicacionExistente),
         validarSolicitud,
     ], 
@@ -31,18 +31,6 @@ router.delete('/:commentId',
     ],
 
     eliminarComentario
-);
-
-router.put('/:commentId',
-    validarJWT,
-    [
-        check("commentId", "El id no es un formato valido para MongoDB").isMongoId(),
-        check("commentId").custom(comentarioExistente),
-        validarSolicitud,
-        ValidarComentarioAutor,
-    ], 
-
-    actualizarComentario
 );
 
 export default router;

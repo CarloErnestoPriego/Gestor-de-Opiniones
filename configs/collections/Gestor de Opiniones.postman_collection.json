@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:3000/gestorOpiniones/v1/auth/register",
+			"name": "Register",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,7 +38,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/gestorOpiniones/v1/auth/login",
+			"name": "Login",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -69,19 +69,19 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Postear",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlODQ5YTIzNGEzZTgzMDI1NDYxNjEiLCJpYXQiOjE3NDA1MzkyNDgsImV4cCI6MTc0MDU0Mjg0OH0.1XU-XixbfKxHKOI0iAED941Iu51MrZ2PFAYdPVTbdgE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzYjExN2MyYzQ4YmI0Mzc1NzliNjIiLCJpYXQiOjE3NDA4NzgxMTIsImV4cCI6MTc0MDg4MTcxMn0.yq-B754wPIKFaRDiyLPUNeiqSy0qsFrekVM_f2pZaqE",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titulo\": \"Gestor de Opiniones\",\r\n    \"categoria\": \"Informatica\",\r\n    \"descripcion\": \"Probando el programa\"\r\n}",
+					"raw": "{\r\n    \"titulo\": \"Hola Profe\",\r\n    \"categoria\": \"Saludo\",\r\n    \"descripcion\": \"Buenos dias, tardes, noche\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -100,6 +100,136 @@
 						"v1",
 						"posts",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPostById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/67c37cb289c2b066878e93f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"posts",
+						"67c37cb289c2b066878e93f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delPost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyNDZjYWNjNzZkMzcyYjYzZjc0ODMiLCJpYXQiOjE3NDA4NjMzNzcsImV4cCI6MTc0MDg2Njk3N30.O2WYIPakv_5mSOOvCGHU8XIeJiAWD3HVVHZgzKKXUcc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/67c37b2e72fb12f28de66faf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"posts",
+						"67c37b2e72fb12f28de66faf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putPost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyNDZjYWNjNzZkMzcyYjYzZjc0ODMiLCJpYXQiOjE3NDA4NjMzNzcsImV4cCI6MTc0MDg2Njk3N30.O2WYIPakv_5mSOOvCGHU8XIeJiAWD3HVVHZgzKKXUcc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"Salundado al Profe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/67c37cb289c2b066878e93f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"posts",
+						"67c37cb289c2b066878e93f5"
 					]
 				}
 			},
