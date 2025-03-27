@@ -7,8 +7,9 @@ const publicacionesSchema = new Schema({
         required: true
     },
     categoria: {
-        type: String,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'Category',
+        required: [true, 'La categoría es obligatoria'],
     },
     descripcion: {
         type: String,

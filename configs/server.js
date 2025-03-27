@@ -4,12 +4,14 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+
 import { dbConnection } from "./mongo.js";
+
 import userRoutes from "../src/users/user.routes.js";
 import authRoutes from "../src//auth/auth.routes.js";
 import publicacionRoutes from "../src//publicaciones/publicaciones.routes.js";
 import comentarioRoutes from "../src//comentarios/comentario.routes.js";
-import limiter from "../src/middlewares/validar-cant-peticiones.js";
+import categoriasRoutes from "../src//categorias/categorias.routes.js";
 
 
 const middlewares = (app) => {
@@ -20,10 +22,11 @@ const middlewares = (app) => {
 }
 
 const routes = (app) => {
-    app.use("/gestorOpiniones/v1/auth", authRoutes)
-    app.use("/gestorOpiniones/v1/user", userRoutes)
-    app.use("/gestorOpiniones/v1/posts" , publicacionRoutes)
-    app.use("/gestorOpiniones/v1/comments", comentarioRoutes)
+    app.use("/gestorOpiniones/v1/auth", authRoutes);
+    app.use("/gestorOpiniones/v1/user", userRoutes);
+    app.use("/gestorOpiniones/v1/posts" , publicacionRoutes);
+    app.use("/gestorOpiniones/v1/comments", comentarioRoutes);
+    app.use("/gestorOpiniones/v1/categories", categoriasRoutes);
 }
 
 const conectarDB = async () => {

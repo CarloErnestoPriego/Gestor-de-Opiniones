@@ -3,6 +3,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { validarJWT } from "../middlewares/validar-jwt.js";
+
 import { crearComentario, eliminarComentario, actualizarComentario } from "../comentarios/comentario.controller.js";
 import { comentarioExistente } from "../helpers/validacion-comentarios.js";
 import { publicacionExistente } from "../helpers/validacion-publicaciones.js";
@@ -31,6 +32,15 @@ router.delete('/:commentId',
     ],
 
     eliminarComentario
+);
+
+router.put('/:commentId',
+    validarJWT,
+    [
+        check("commentId", "The id is not a valid MongoDB format").isMongoId(),
+        ValidarComentarioAutor,
+    ], 
+    actualizarComentario
 );
 
 export default router;

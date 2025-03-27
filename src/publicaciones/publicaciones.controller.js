@@ -22,7 +22,7 @@ export const crearPost = async (req, res) => {
             post
         });
     } catch (error) {
-        res.status(500).json('Error del Servidor');
+        res.status(500).json('Error interno del servidor');
         console.error(error);
     }
 }
@@ -53,42 +53,25 @@ export const feed = async (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Error del Servidor' });
+        res.status(500).json({ error: 'Error interno del servidor' });
     }
 };
 
 export const actualizarPost = async (req, res) => {
     const { id } = req.params;
+    const { _id, author_id, ...rest } = req.body;
 
     try {
-        console.log("Recibido ID:", id);
-        console.log("Datos de actualización:", updateData);
+        await Post.findByIdAndUpdate(id, rest)
 
-        if (!id) {
-            return res.status(400).json({ success: false, message: "El id es requerido" });
-        }
-
-        const updatedPost = await Post.findByIdAndUpdate(id, updateData, { new: true });
-
-        if (!updatedPost) {
-            return res.status(404).json({ success: false, message: "Publicacion no encontrada" });
-        }
-
-        console.log("Post actualizado correctamente:", updatedPost);
+        const posts = await Post.findOne({ _id: id })
 
         res.status(200).json({
-            success: true,
-            post: updatedPost
+            posts
         });
-
     } catch (error) {
-        console.error("Error en actualizarPost:", error);
-
-        res.status(500).json({
-            success: false,
-            message: "Error del Servidor",
-            error: error.message
-        });
+        console.error(error);
+        res.status(500).json('Error interno del servidor');
     }
 };
 
@@ -101,12 +84,12 @@ export const eliminarPost = async (req, res) => {
         const post = await Post.findOne({ _id: id });
 
         res.status(200).json({
-            msg: 'Publicación eliminada correctamente',
+            msg: 'Publicación desabilitada correctamente',
             post,
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json('Error del Servidor');
+        res.status(500).json('Error interno del servidor');
     }
 }
 
@@ -115,7 +98,7 @@ export const detalle = async (req, res) => {
         const postId = req.params.postId;
         const post = await Post.findById(postId);
         if (!post) {
-            return res.status(404).json({ message: "El post no existe" });
+            return res.status(404).json({ message: "El post no existe en la base de datos" });
         }
 
         const comments = await Comment.find({ postId: postId });
@@ -146,6 +129,6 @@ export const detalle = async (req, res) => {
         res.status(200).json({ details });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Error del Servidor' });
+        res.status(500).json({ message: 'Error interno del servidor' });
     }
 };
