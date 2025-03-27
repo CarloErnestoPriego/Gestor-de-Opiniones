@@ -69,6 +69,169 @@
 			"response": []
 		},
 		{
+			"name": "postCategory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDI5NjEwMTIsImV4cCI6MTc0Mjk2NDYxMn0.oWP6VJ9G58ueidXgrf578Oni7VQJ7Hp0Trd_mnk2e6s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"Noticias\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDI5NjEwMTIsImV4cCI6MTc0Mjk2NDYxMn0.oWP6VJ9G58ueidXgrf578Oni7VQJ7Hp0Trd_mnk2e6s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCategory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMTI1NDgsImV4cCI6MTc0MzAxNjE0OH0.UnSJjpZHBsBAjk5mD-h_GsU0EgLPWJVsgBFZX90XE6s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"Informativo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/categories/67e379e0090bd9fa4d962b90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"categories",
+						"67e379e0090bd9fa4d962b90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCategory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMTI1NDgsImV4cCI6MTc0MzAxNjE0OH0.UnSJjpZHBsBAjk5mD-h_GsU0EgLPWJVsgBFZX90XE6s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/categories/67e379e0090bd9fa4d962b90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"categories",
+						"67e379e0090bd9fa4d962b90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Postear",
 			"request": {
 				"method": "POST",
@@ -165,13 +328,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyNDZjYWNjNzZkMzcyYjYzZjc0ODMiLCJpYXQiOjE3NDA4NjMzNzcsImV4cCI6MTc0MDg2Njk3N30.O2WYIPakv_5mSOOvCGHU8XIeJiAWD3HVVHZgzKKXUcc",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMTQ0MDcsImV4cCI6MTc0MzAxODAwN30.OUkEPpUQ64Sz6PyfN9bh_TOtF_JUczqdaPdLykBW_PM",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMTQ0MDcsImV4cCI6MTc0MzAxODAwN30.OUkEPpUQ64Sz6PyfN9bh_TOtF_JUczqdaPdLykBW_PM\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -179,7 +342,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/67c37b2e72fb12f28de66faf",
+					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/67e4491164a421b66aca303f",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -189,7 +352,7 @@
 						"gestorOpiniones",
 						"v1",
 						"posts",
-						"67c37b2e72fb12f28de66faf"
+						"67e4491164a421b66aca303f"
 					]
 				}
 			},
@@ -205,13 +368,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyNDZjYWNjNzZkMzcyYjYzZjc0ODMiLCJpYXQiOjE3NDA4NjMzNzcsImV4cCI6MTc0MDg2Njk3N30.O2WYIPakv_5mSOOvCGHU8XIeJiAWD3HVVHZgzKKXUcc",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzk1MzA5MGJkOWZhNGQ5NjJiODkiLCJpYXQiOjE3NDMwMTQzMjEsImV4cCI6MTc0MzAxNzkyMX0.taWWWu1Gbi-NA3t-NCYuNey_-eDtIY-vpngjzX3Vz0M",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"category\": \"Salundado al Profe\"\r\n}",
+					"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzk1MzA5MGJkOWZhNGQ5NjJiODkiLCJpYXQiOjE3NDMwMTQzMjEsImV4cCI6MTc0MzAxNzkyMX0.taWWWu1Gbi-NA3t-NCYuNey_-eDtIY-vpngjzX3Vz0M\",\r\n    \"categoria\": \"67e4485d64a421b66aca3034\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -219,7 +382,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/67c37cb289c2b066878e93f5",
+					"raw": "http://localhost:3000/gestorOpiniones/v1/posts/67e4491164a421b66aca303f",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -229,7 +392,127 @@
 						"gestorOpiniones",
 						"v1",
 						"posts",
-						"67c37cb289c2b066878e93f5"
+						"67e4491164a421b66aca303f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postComments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMzYwMjcsImV4cCI6MTc0MzAzOTYyN30.rN6MWR5hUzp96_mmtGcy-WyNJhJ6ENH_bBmFQ8tcGag",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postId\": \"67e379eb090bd9fa4d962b93\",\r\n    \"text\": \"No que un mexico sin hambre Claudia\",\r\n    \"author_id\": \"67e378fd090bd9fa4d962b86\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/comments/67e379eb090bd9fa4d962b93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"comments",
+						"67e379eb090bd9fa4d962b93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateComments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMzYwMjcsImV4cCI6MTc0MzAzOTYyN30.rN6MWR5hUzp96_mmtGcy-WyNJhJ6ENH_bBmFQ8tcGag",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMzYwMjcsImV4cCI6MTc0MzAzOTYyN30.rN6MWR5hUzp96_mmtGcy-WyNJhJ6ENH_bBmFQ8tcGag\",\r\n    \"text\": \"Viva el fuchibol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/comments/67e49f7efcc8baf6913c0a7d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"comments",
+						"67e49f7efcc8baf6913c0a7d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteComments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMzYwMjcsImV4cCI6MTc0MzAzOTYyN30.rN6MWR5hUzp96_mmtGcy-WyNJhJ6ENH_bBmFQ8tcGag",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMzYwMjcsImV4cCI6MTc0MzAzOTYyN30.rN6MWR5hUzp96_mmtGcy-WyNJhJ6ENH_bBmFQ8tcGag\",\r\n    \"text\": \"Viva el fuchibol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gestorOpiniones/v1/comments/67e49f7efcc8baf6913c0a7d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gestorOpiniones",
+						"v1",
+						"comments",
+						"67e49f7efcc8baf6913c0a7d"
 					]
 				}
 			},

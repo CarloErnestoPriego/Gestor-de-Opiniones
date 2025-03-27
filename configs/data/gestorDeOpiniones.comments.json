@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "67e49ed3fcc8baf6913c0a78"
+  },
+  "text": "No que un mexico sin hambre Claudia",
+  "author_id": {
+    "$oid": "67e378fd090bd9fa4d962b86"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e49f7efcc8baf6913c0a7d"
+  },
+  "text": "Viva el fuchibol",
+  "author_id": {
+    "$oid": "67e378fd090bd9fa4d962b86"
+  },
+  "status": false,
+  "__v": 0
+}]

@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "67e37a6a090bd9fa4d962b98"
+  },
+  "category": "Arte",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e4485d64a421b66aca3034"
+  },
+  "category": "Noticias",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e448b564a421b66aca3038"
+  },
+  "category": "Tecnologia",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e448bd64a421b66aca303c"
+  },
+  "category": "Economia",
+  "__v": 0
+}]

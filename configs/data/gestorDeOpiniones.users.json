@@ -16,4 +16,44 @@
   "updatedAt": {
     "$date": "2025-02-26T03:03:54.559Z"
   }
+},
+{
+  "_id": {
+    "$oid": "67e378fd090bd9fa4d962b86"
+  },
+  "name": "Jose",
+  "surname": "Eduardo",
+  "username": "jedu",
+  "email": "jose@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$K49bd220QvLm2L2+XPFgtQ$IK5TRqcW2+oxtHqxtzsbKrgteXRSUHky429ZF+rtLls",
+  "profilePicture": null,
+  "phone": "78561248",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-26T03:48:13.245Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-26T03:48:13.245Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e37953090bd9fa4d962b89"
+  },
+  "name": "Evelin",
+  "surname": "Castillo",
+  "username": "eve",
+  "email": "ecastillo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Dd9yPKYqsnPjcKCFltPFLw$aiWZgNxTvl8MavdPMkFkKp2Q0S0N0DW3XDfejh/yREU",
+  "profilePicture": null,
+  "phone": "78561248",
+  "role": "ADMIN",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-26T03:49:39.080Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-26T03:49:39.080Z"
+  }
 }]

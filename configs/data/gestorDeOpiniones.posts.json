@@ -1,13 +1,36 @@
 [{
   "_id": {
-    "$oid": "67be8854cb81598c1a0bd1dc"
+    "$oid": "67e379eb090bd9fa4d962b93"
   },
-  "titulo": "Gestor de Opiniones",
-  "categoria": "Informatica",
-  "descripcion": "Probando el programa",
-  "estado": true,
+  "titulo": "Hola Profe",
+  "categoria": {
+    "$oid": "67e379e0090bd9fa4d962b90"
+  },
+  "descripcion": "Buenos dias, tardes, noche",
+  "idAutor": {
+    "$oid": "67e37953090bd9fa4d962b89"
+  },
+  "status": true,
   "fechaCreacion": {
-    "$date": "2025-02-26T03:19:48.443Z"
+    "$date": "2025-03-26T03:52:11.327Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e4491164a421b66aca303f"
+  },
+  "titulo": "Asalto zona 6",
+  "categoria": {
+    "$oid": "67e4485d64a421b66aca3034"
+  },
+  "descripcion": "Fuentes revelan un asalto en zona 6",
+  "idAutor": {
+    "$oid": "67e378fd090bd9fa4d962b86"
+  },
+  "status": true,
+  "fechaCreacion": {
+    "$date": "2025-03-26T18:36:01.109Z"
   },
   "__v": 0
 }]
