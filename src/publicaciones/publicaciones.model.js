@@ -1,4 +1,3 @@
-// 'Hecho por Carlos Priego'
 import { Schema, model } from 'mongoose';
 
 const publicacionesSchema = new Schema({

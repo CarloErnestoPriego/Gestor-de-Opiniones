@@ -1,5 +1,3 @@
-'Hecho por Carlos Priego'
-
 import { Router } from "express";
 import { check } from "express-validator";
 import { validarJWT } from "../middlewares/validar-jwt.js";

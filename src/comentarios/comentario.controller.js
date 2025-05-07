@@ -1,14 +1,31 @@
-import Comment from '../comentarios/comentario.model.js';
+import mongoose from 'mongoose';
 import Post from '../publicaciones/publicaciones.model.js';
 import User from '../users/user.model.js';
+import Comment from '../comentarios/comentario.model.js';
 
 export const crearComentario = async (req, res) => {
-    const postId = req.params.postId;
-    const userId = req.user._id;
-    const { text } = req.body;
+    const { postId, text } = req.body;  // Leer postId desde el cuerpo de la solicitud
+    const userId = req.user._id; 
 
     try {
+        console.log('postId recibido:', postId);
+
+        if (!mongoose.Types.ObjectId.isValid(postId)) {
+            return res.status(400).json({
+                success: false,
+                message: 'ID de publicación no válido',
+                receivedPostId: postId,
+            });
+        }
+
         const post = await Post.findOne({ _id: postId });
+
+        if (!post) {
+            return res.status(404).json({
+                success: false,
+                message: 'Publicación no encontrada',
+            });
+        }
 
         const comment = new Comment({
             postId, text, author_id: userId,
@@ -16,26 +33,29 @@ export const crearComentario = async (req, res) => {
 
         await comment.save();
 
-        const postAuthor = await User.findOne({ _id: post.author_id });
+        const postAuthor = await User.findOne({ _id: post.idAutor });
         const commentAuthor = await User.findOne({ _id: comment.author_id });
 
         const data = {
             post: {
-                title: post.title,
-                category: post.category,
-                text: post.text,
+                title: post.titulo,
+                category: post.categoria,
+                description: post.descripcion,
                 author: postAuthor.username,
-                creation_date: new Date(post.creation_date).toISOString().split('T')[0],
+                creation_date: new Date(post.fechaCreacion).toISOString().split('T')[0],
             },
             comment: {
                 comment: comment.text,
                 author: commentAuthor.username,
             }
         };
+
         res.status(201).json({
             data
         });
+
     } catch (error) {
+        console.error(error);
         res.status(500).json({
             success: false,
             message: 'Error interno del servidor',
@@ -52,7 +72,7 @@ export const eliminarComentario = async (req, res) => {
         await Comment.findByIdAndUpdate(commentId, { status: false });
         const comment = await Comment.findOne({ _id: commentId });
         res.status(200).json({
-            msg: 'Comentario desactivado',
+            msg: 'Comentario eliminado',
             comment,
         });
         
