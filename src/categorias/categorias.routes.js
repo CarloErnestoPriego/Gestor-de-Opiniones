@@ -6,8 +6,7 @@ const router = new Router();
 
 router.post(
     '/', 
-    
-    validarJWT,
+    //validarJWT,
     postCategory
 );
 
@@ -23,13 +22,13 @@ router.get(
 
 router.delete(
     '/:id',
-    validarJWT,
+    //validarJWT,
     deleteCategory
 );
 
 router.put(
     '/:id',
-    validarJWT,
+    //validarJWT,
     updateCategory
 );
 

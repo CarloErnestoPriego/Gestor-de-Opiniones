@@ -8,18 +8,20 @@ const publicacionesSchema = new Schema({
     categoria: {
         type: Schema.Types.ObjectId,
         ref: 'Category',
-        required: [true, 'La categoría es obligatoria'],
+        required: true
     },
     descripcion: {
         type: String,
         required: true
     },
-    idAutor: {
+    autor: {
         type: Schema.Types.ObjectId,
         ref: 'User',
+        required: true
     },
     fechaCreacion: {
-        type: Date, default: Date.now
+        type: Date,
+        default: Date.now
     },
     status: {
         type: Boolean,

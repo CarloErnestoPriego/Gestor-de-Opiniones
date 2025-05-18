@@ -50,7 +50,7 @@ export const ValidarPosteoAutor = async (req, res, next) => {
                 success: false,
                 message: "Token inválido o expirado.",
             });
-        }
+        } 
 
         const userId = decoded.uid; // Aquí se extrae correctamente el ID del usuario
         const { id: postId } = req.params;

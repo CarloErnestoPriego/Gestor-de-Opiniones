@@ -1,9 +1,68 @@
 [{
   "_id": {
-    "$oid": "67e49ed3fcc8baf6913c0a78"
+    "$oid": "682a45a6ad6e1c8762bb099d"
   },
-  "text": "No que un mexico sin hambre Claudia",
-  "author_id": {
+  "postId": {
+    "$oid": "682a4185473aac0175e8b83b"
+  },
+  "text": "50 puntos se juegan al realizar la actividad",
+  "autor": {
+    "$oid": "67e37953090bd9fa4d962b89"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682a45e47c1842b717f93ac5"
+  },
+  "postId": {
+    "$oid": "682a4185473aac0175e8b83b"
+  },
+  "text": "Ya se Empezo a Trabajar en el Proyecto",
+  "autor": {
+    "$oid": "67e37953090bd9fa4d962b89"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682a463e7c1842b717f93ad4"
+  },
+  "postId": {
+    "$oid": "682a41da473aac0175e8b83d"
+  },
+  "text": "Preparence lo mejor posible",
+  "autor": {
+    "$oid": "67be849a234a3e8302546161"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682a464c7c1842b717f93ae4"
+  },
+  "postId": {
+    "$oid": "682a41da473aac0175e8b83d"
+  },
+  "text": "La exposicion se realizara el lunes 19 de mayo",
+  "autor": {
+    "$oid": "67be849a234a3e8302546161"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682a46877c1842b717f93af5"
+  },
+  "postId": {
+    "$oid": "682a421a473aac0175e8b83f"
+  },
+  "text": "Que Bueno Menos Tarea :>",
+  "autor": {
     "$oid": "67e378fd090bd9fa4d962b86"
   },
   "status": true,
@@ -11,12 +70,15 @@
 },
 {
   "_id": {
-    "$oid": "67e49f7efcc8baf6913c0a7d"
+    "$oid": "682a46df7c1842b717f93b07"
   },
-  "text": "Viva el fuchibol",
-  "author_id": {
+  "postId": {
+    "$oid": "682a421a473aac0175e8b83f"
+  },
+  "text": "Ahora Podre Centrarme en Taller",
+  "autor": {
     "$oid": "67e378fd090bd9fa4d962b86"
   },
-  "status": false,
+  "status": true,
   "__v": 0
 }]

@@ -10,7 +10,7 @@ import { validarSolicitud, ValidarComentarioAutor } from "../middlewares/validar
 const router = Router();
 
 router.post('/:idPost',
-    validarJWT,
+    //validarJWT,
     [
         check("idPost", "The id is not a valid MongoDB format").isMongoId(),
         check("postId").custom(publicacionExistente),
@@ -21,7 +21,7 @@ router.post('/:idPost',
 );
 
 router.delete('/:commentId',
-    validarJWT,
+    //validarJWT,
     [
         check("commentId", "El id no es un formato valido para MongoDB").isMongoId(),
         check("commentId").custom(comentarioExistente),
@@ -33,7 +33,7 @@ router.delete('/:commentId',
 );
 
 router.put('/:commentId',
-    validarJWT,
+    //validarJWT,
     [
         check("commentId", "The id is not a valid MongoDB format").isMongoId(),
         ValidarComentarioAutor,

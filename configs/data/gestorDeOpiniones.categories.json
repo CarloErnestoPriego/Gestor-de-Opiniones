@@ -1,28 +1,21 @@
 [{
   "_id": {
-    "$oid": "67e37a6a090bd9fa4d962b98"
+    "$oid": "682a40d9473aac0175e8b832"
   },
-  "category": "Arte",
+  "category": "Taller",
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "67e4485d64a421b66aca3034"
-  },
-  "category": "Noticias",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67e448b564a421b66aca3038"
+    "$oid": "682a40df473aac0175e8b835"
   },
   "category": "Tecnologia",
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "67e448bd64a421b66aca303c"
+    "$oid": "682a40f0473aac0175e8b839"
   },
-  "category": "Economia",
+  "category": "Practicas Supervisadas",
   "__v": 0
 }]

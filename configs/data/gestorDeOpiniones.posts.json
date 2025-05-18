@@ -1,36 +1,54 @@
 [{
   "_id": {
-    "$oid": "67e379eb090bd9fa4d962b93"
+    "$oid": "682a4185473aac0175e8b83b"
   },
-  "titulo": "Hola Profe",
+  "titulo": "Proyecto Bimestral",
   "categoria": {
-    "$oid": "67e379e0090bd9fa4d962b90"
+    "$oid": "682a40d9473aac0175e8b832"
   },
-  "descripcion": "Buenos dias, tardes, noche",
-  "idAutor": {
-    "$oid": "67e37953090bd9fa4d962b89"
+  "descripcion": "Realizar un Gestor de Hoteles",
+  "autor": {
+    "$oid": "67be849a234a3e8302546161"
   },
   "status": true,
   "fechaCreacion": {
-    "$date": "2025-03-26T03:52:11.327Z"
+    "$date": "2025-05-18T20:22:29.847Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "67e4491164a421b66aca303f"
+    "$oid": "682a41da473aac0175e8b83d"
   },
-  "titulo": "Asalto zona 6",
+  "titulo": "Exposicion Grupal",
   "categoria": {
-    "$oid": "67e4485d64a421b66aca3034"
+    "$oid": "682a40df473aac0175e8b835"
   },
-  "descripcion": "Fuentes revelan un asalto en zona 6",
-  "idAutor": {
+  "descripcion": "Realizar una Exposicion en Grupo Sobre el Proyecto del 3er Bimestre",
+  "autor": {
     "$oid": "67e378fd090bd9fa4d962b86"
   },
   "status": true,
   "fechaCreacion": {
-    "$date": "2025-03-26T18:36:01.109Z"
+    "$date": "2025-05-18T20:23:54.032Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682a421a473aac0175e8b83f"
+  },
+  "titulo": "Contenido Acabado",
+  "categoria": {
+    "$oid": "682a40f0473aac0175e8b839"
+  },
+  "descripcion": "Sin Actividades que realizar por el momento",
+  "autor": {
+    "$oid": "67e37953090bd9fa4d962b89"
+  },
+  "status": true,
+  "fechaCreacion": {
+    "$date": "2025-05-18T20:24:58.947Z"
   },
   "__v": 0
 }]

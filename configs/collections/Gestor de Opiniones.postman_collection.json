@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"cpriego@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"raw": "{\r\n    \"email\": \"herrera@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -244,7 +244,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titulo\": \"Hola Profe\",\r\n    \"categoria\": \"Saludo\",\r\n    \"descripcion\": \"Buenos dias, tardes, noche\"\r\n}",
+					"raw": "{\r\n    \"titulo\": \"Hola Profe\",\r\n    \"categoria\": \"Saludo\",\r\n    \"descripcion\": \"Buenos dias, tardes, noche\",\r\n    \"autor\": \"67e37953090bd9fa4d962b89\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -408,13 +408,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2UzNzhmZDA5MGJkOWZhNGQ5NjJiODYiLCJpYXQiOjE3NDMwMzYwMjcsImV4cCI6MTc0MzAzOTYyN30.rN6MWR5hUzp96_mmtGcy-WyNJhJ6ENH_bBmFQ8tcGag",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODFiOGM0Mjc4NjdiYmJlMjM4MDcyOGYiLCJpYXQiOjE3NDY2MzU4NTksImV4cCI6MTc0NjYzOTQ1OX0.ldJ324K2UqWXgJBf7JW0POJx8w8eDqMeDvX-6d3Qg3E",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"postId\": \"67e379eb090bd9fa4d962b93\",\r\n    \"text\": \"No que un mexico sin hambre Claudia\",\r\n    \"author_id\": \"67e378fd090bd9fa4d962b86\"\r\n}",
+					"raw": "{\r\n    \"postId\": \"67e379eb090bd9fa4d962b93\",\r\n    \"text\": \"viva el fuchibol\",\r\n    \"author_id\": \"67e378fd090bd9fa4d962b86\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

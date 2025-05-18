@@ -8,7 +8,7 @@ import { publicacionExistente } from "../helpers/validacion-publicaciones.js";
 const router = Router();
 
 router.post('/',
-    validarJWT,
+    //validarJWT,
     [
         check("titulo", "Debe colocar un titulo").not().isEmpty(),
         check("categoria", "Debe colocar una categoria").not().isEmpty(),
@@ -25,7 +25,7 @@ router.get(
 
 
 router.put('/:id', 
-    validarJWT,
+    //validarJWT,
     [
         check("id", "The id is not a valid MongoDB format").isMongoId(),
         check("id").custom(publicacionExistente),
@@ -45,7 +45,7 @@ router.get('/:postId',
 );
 
 router.delete('/:id', 
-    validarJWT,
+    //validarJWT,
     [
         check("id", "The id is not a valid MongoDB format").isMongoId(),
         check("id").custom(publicacionExistente),
