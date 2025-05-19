@@ -30,8 +30,8 @@ export const feed = async (req, res) => {
     const [total, posts] = await Promise.all([
       Post.countDocuments(query),
       Post.find(query)
-        .populate("autor", "username") // solo username
-        .populate("categoria", "category") // solo el nombre de la categoría
+        .populate("autor", "username")
+        .populate("categoria", "category")
         .skip(Number(offset))
         .limit(Number(limit)),
     ]);
@@ -42,11 +42,11 @@ export const feed = async (req, res) => {
 
         const formattedComments = await Promise.all(
           comments.map(async (comment) => {
-            const author = await User.findById(comment.author_id);
+            const autor = await User.findById(comment.autor);
             return {
               id: comment._id,
               comment: comment.text,
-              author: author ? author.username : "Usuario desconocido",
+              author: autor ? autor.username : "Usuario desconocido",
             };
           })
         );
@@ -58,7 +58,7 @@ export const feed = async (req, res) => {
           categoria: post.categoria
             ? post.categoria.category
             : "Categoría eliminada",
-          autor: post.autor ? post.autor.username : "Autor desconocido",
+          autor: post.autor || { username: "Autor desconocido" },
           fechaCreacion: new Date(post.fechaCreacion)
             .toISOString()
             .split("T")[0],
