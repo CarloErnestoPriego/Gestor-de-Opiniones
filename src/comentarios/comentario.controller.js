@@ -4,7 +4,7 @@ import User from "../users/user.model.js";
 import Comment from "../comentarios/comentario.model.js";
 
 export const crearComentario = async (req, res) => {
-  const { postId, text, autor } = req.body; // <-- cambio aquí
+  const { postId, text, autor } = req.body;
 
   try {
     console.log("postId recibido:", postId);
@@ -36,7 +36,7 @@ export const crearComentario = async (req, res) => {
     const comment = new Comment({
       postId,
       text,
-      autor, // <-- coincide con el esquema
+      autor,
     });
 
     await comment.save();
