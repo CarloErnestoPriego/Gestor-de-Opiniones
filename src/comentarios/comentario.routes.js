@@ -9,14 +9,13 @@ import { validarSolicitud, ValidarComentarioAutor } from "../middlewares/validar
 
 const router = Router();
 
-router.post('/:idPost',
-    //validarJWT,
+router.post('/',
+    //validarJWT
     [
-        check("idPost", "The id is not a valid MongoDB format").isMongoId(),
+        check("postId", "postId no es un formato válido").isMongoId(),
         check("postId").custom(publicacionExistente),
         validarSolicitud,
     ], 
-
     crearComentario
 );
 
